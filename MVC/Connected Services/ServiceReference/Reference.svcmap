@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="eb570985-c68e-4f5f-b332-a9911f810b45" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/ServicoWCF/Servico/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Servico.wsdl" MetadataType="Wsdl" ID="fbdccd81-20be-4958-846b-972f06cf439f" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ServicoWCF/Servico/?wsdl" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="1b1e1ed0-8e78-4ba1-b721-b9a384e959f6" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ServicoWCF/Servico/?xsd=xsd0" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="359fca6d-f9a1-453e-9aab-156da8a3b9c3" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ServicoWCF/Servico/?xsd=xsd2" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="e20609de-c8dc-4859-843e-aaa8a12ce297" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ServicoWCF/Servico/?disco" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="f3f5d499-7bc6-41e9-8fec-478b24b2c4c9" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ServicoWCF/Servico/?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
