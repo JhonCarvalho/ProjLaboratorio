@@ -7,6 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
 using ServicoWCF;
 using System.Collections.Generic;
 using System.Linq;
