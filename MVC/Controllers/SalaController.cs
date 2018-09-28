@@ -1,4 +1,5 @@
 ﻿using MVC.Models;
+using MVC.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,17 +20,9 @@ namespace MVC.Controllers
 
             foreach (var item in lst)
             {
+                
                 SalaModel s = new SalaModel();
-                s.Id = item.Id;
-                s.Nome = item.Nome;
-                s.Projetor = item.Projetor;
-                s.qtdAlunos = item.qtdAlunos;
-                s.qtdComputadores = item.qtdComputadores;
-                s.SistemaOperacional = item.SistemaOperacional;
-                s.Software1 = item.Software1;
-                s.Software2 = item.Software2;
-                s.Software3 = item.Software3;
-
+                s = Converte.ToSalaModel(item);
                 lstSala.Add(s);
             }
             
@@ -39,7 +32,9 @@ namespace MVC.Controllers
         // GET: Sala/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            SalaModel sm = new SalaModel();
+            sm = Converte.ToSalaModel(server.getById(id));
+            return View(sm);
         }
 
         // GET: Sala/Create
@@ -53,20 +48,11 @@ namespace MVC.Controllers
         public ActionResult Create(SalaModel sl)
         {
             try
-            {
-                //SalaModel s = new SalaModel();
-                MVC.ServiceReference.Sala s = new MVC.ServiceReference.Sala();
-                s.Nome = sl.Nome;
-                s.Projetor = sl.Projetor;
-                s.qtdAlunos = sl.qtdAlunos;
-                s.qtdComputadores = sl.qtdComputadores;
-                s.SistemaOperacional = sl.SistemaOperacional;
-                s.Software1 = sl.Software1;
-                s.Software2 = sl.Software2;
-                s.Software3 = sl.Software3;
-                server.inserir(s);
-                // TODO: Add insert logic here
-                return RedirectToAction("Index");
+            {              
+                    server.inserir(Converte.ToSala(sl));
+                    // TODO: Add insert logic here
+                    return RedirectToAction("Index");
+                
             }
             catch
             {
@@ -77,15 +63,18 @@ namespace MVC.Controllers
         // GET: Sala/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            SalaModel sm = new SalaModel();
+            sm = Converte.ToSalaModel(server.getById(id));
+            return View(sm);           
         }
 
         // POST: Sala/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(SalaModel sm)
         {
             try
             {
+                server.editar(Converte.ToSala(sm));
                 // TODO: Add update logic here
 
                 return RedirectToAction("Index");
@@ -99,15 +88,19 @@ namespace MVC.Controllers
         // GET: Sala/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            server.excluir(id);
+            // TODO: Add delete logic here
+            return RedirectToAction("Index");
         }
 
         // POST: Sala/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpPost,ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult ConfirmarDelete(int id, FormCollection collection)
         {
             try
             {
+                server.excluir(id);
                 // TODO: Add delete logic here
 
                 return RedirectToAction("Index");

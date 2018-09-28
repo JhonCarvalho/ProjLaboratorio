@@ -19,6 +19,24 @@
   <wsdl:message name="IServico_Listar_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListarResponse" />
   </wsdl:message>
+  <wsdl:message name="IServico_getById_InputMessage">
+    <wsdl:part name="parameters" element="tns:getById" />
+  </wsdl:message>
+  <wsdl:message name="IServico_getById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServico_editar_InputMessage">
+    <wsdl:part name="parameters" element="tns:editar" />
+  </wsdl:message>
+  <wsdl:message name="IServico_editar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServico_excluir_InputMessage">
+    <wsdl:part name="parameters" element="tns:excluir" />
+  </wsdl:message>
+  <wsdl:message name="IServico_excluir_OutputMessage">
+    <wsdl:part name="parameters" element="tns:excluirResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServico">
     <wsdl:operation name="inserir">
       <wsdl:input wsaw:Action="http://tempuri.org/IServico/inserir" message="tns:IServico_inserir_InputMessage" />
@@ -27,6 +45,18 @@
     <wsdl:operation name="Listar">
       <wsdl:input wsaw:Action="http://tempuri.org/IServico/Listar" message="tns:IServico_Listar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServico/ListarResponse" message="tns:IServico_Listar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServico/getById" message="tns:IServico_getById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServico/getByIdResponse" message="tns:IServico_getById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="editar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServico/editar" message="tns:IServico_editar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServico/editarResponse" message="tns:IServico_editar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="excluir">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServico/excluir" message="tns:IServico_excluir_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServico/excluirResponse" message="tns:IServico_excluir_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServico" type="tns:IServico">
@@ -42,6 +72,33 @@
     </wsdl:operation>
     <wsdl:operation name="Listar">
       <soap:operation soapAction="http://tempuri.org/IServico/Listar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getById">
+      <soap:operation soapAction="http://tempuri.org/IServico/getById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editar">
+      <soap:operation soapAction="http://tempuri.org/IServico/editar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="excluir">
+      <soap:operation soapAction="http://tempuri.org/IServico/excluir" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

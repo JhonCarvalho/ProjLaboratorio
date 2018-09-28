@@ -1,20 +1,20 @@
 ﻿@model IEnumerable<MVC.Models.SalaModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Lista";
 }
 
-<h2>Index</h2>
+<h2>Lista de Salas</h2>
+<button class="btn btn-default" onclick="location.href='@Url.Action("Create", "Sala")';return false;">Novo</button>
+<br />
+<br />
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Nome)
         </th>
-        <th>
+        <th >
             @Html.DisplayNameFor(model => model.qtdComputadores)
         </th>
         <th>
@@ -35,41 +35,51 @@
         <th>
             @Html.DisplayNameFor(model => model.SistemaOperacional)
         </th>
-        <th></th>
+        <th>Ações:</th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        <td width="15%">
             @Html.DisplayFor(modelItem => item.Nome)
         </td>
-        <td>
+        <td width="5%" align="center">
             @Html.DisplayFor(modelItem => item.qtdComputadores)
         </td>
-        <td>
+        <td width="5%" align="center">
             @Html.DisplayFor(modelItem => item.qtdAlunos)
         </td>
-        <td>
+        <td width="5%" align="center">
             @Html.DisplayFor(modelItem => item.Projetor)
         </td>
-        <td>
+        <td width="10%">
             @Html.DisplayFor(modelItem => item.Software1)
         </td>
-        <td>
+        <td width="10%">
             @Html.DisplayFor(modelItem => item.Software2)
         </td>
-        <td>
+        <td width="10%">
             @Html.DisplayFor(modelItem => item.Software3)
         </td>
-        <td>
+        <td width="10%">
             @Html.DisplayFor(modelItem => item.SistemaOperacional)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            <a></a>
+            <button type="button" class="btn btn-default" aria-label="Left Align" onclick="location.href='@Url.Action("Edit", "Sala",new { id=item.Id })';return false;">
+                <span class="glyphicon glyphicon-pencil"  aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-default" aria-label="Left Align" onclick="location.href='@Url.Action("Details", "Sala",new { id=item.Id })';return false;">
+                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-default" aria-label="Left Align" onclick="location.href='@Url.Action("Delete", "Sala",new { id=item.Id })';return false;">
+                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+            </button>
+            
+          
         </td>
     </tr>
 }
+
 
 </table>

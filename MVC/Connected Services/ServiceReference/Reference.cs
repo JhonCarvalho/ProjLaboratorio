@@ -201,6 +201,24 @@ namespace MVC.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServico/Listar", ReplyAction="http://tempuri.org/IServico/ListarResponse")]
         System.Threading.Tasks.Task<MVC.ServiceReference.Sala[]> ListarAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServico/getById", ReplyAction="http://tempuri.org/IServico/getByIdResponse")]
+        MVC.ServiceReference.Sala getById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServico/getById", ReplyAction="http://tempuri.org/IServico/getByIdResponse")]
+        System.Threading.Tasks.Task<MVC.ServiceReference.Sala> getByIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServico/editar", ReplyAction="http://tempuri.org/IServico/editarResponse")]
+        int editar(MVC.ServiceReference.Sala sala);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServico/editar", ReplyAction="http://tempuri.org/IServico/editarResponse")]
+        System.Threading.Tasks.Task<int> editarAsync(MVC.ServiceReference.Sala sala);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServico/excluir", ReplyAction="http://tempuri.org/IServico/excluirResponse")]
+        int excluir(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServico/excluir", ReplyAction="http://tempuri.org/IServico/excluirResponse")]
+        System.Threading.Tasks.Task<int> excluirAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -244,6 +262,30 @@ namespace MVC.ServiceReference {
         
         public System.Threading.Tasks.Task<MVC.ServiceReference.Sala[]> ListarAsync() {
             return base.Channel.ListarAsync();
+        }
+        
+        public MVC.ServiceReference.Sala getById(int id) {
+            return base.Channel.getById(id);
+        }
+        
+        public System.Threading.Tasks.Task<MVC.ServiceReference.Sala> getByIdAsync(int id) {
+            return base.Channel.getByIdAsync(id);
+        }
+        
+        public int editar(MVC.ServiceReference.Sala sala) {
+            return base.Channel.editar(sala);
+        }
+        
+        public System.Threading.Tasks.Task<int> editarAsync(MVC.ServiceReference.Sala sala) {
+            return base.Channel.editarAsync(sala);
+        }
+        
+        public int excluir(int id) {
+            return base.Channel.excluir(id);
+        }
+        
+        public System.Threading.Tasks.Task<int> excluirAsync(int id) {
+            return base.Channel.excluirAsync(id);
         }
     }
 }

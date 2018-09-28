@@ -13,7 +13,17 @@ namespace ServicoWCF
     {
         [OperationContract]
         bool inserir(Sala sala);
+
         [OperationContract]
         List<Sala> Listar();
+
+        [OperationContract]
+        Sala getById(int id);
+
+        [OperationContract]
+        int editar(Sala sala);
+
+        [OperationContract]
+        int excluir(int id);
     }
 }

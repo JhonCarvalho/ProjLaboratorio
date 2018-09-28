@@ -10,12 +10,14 @@
 
 using ServicoWCF;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace Dados
 {
     public class Dados
     {
+        
         public bool Inserir(Sala sala)
         {
             bdLaboratorioEntities context = new bdLaboratorioEntities();
@@ -29,6 +31,43 @@ namespace Dados
         {
             var context = new bdLaboratorioEntities();
             return context.Sala.ToList();
+        }
+
+        public Sala getById(int id)
+        {
+            bdLaboratorioEntities context = new bdLaboratorioEntities();
+            var lstSala = from s in context.Sala where s.Id == id select s;
+            Sala sala = new Sala();
+            foreach(var item in lstSala)
+            {
+                sala.Id = item.Id;
+                sala.Nome = item.Nome;
+                sala.Projetor = item.Projetor;
+                sala.qtdAlunos = item.qtdAlunos;
+                sala.qtdComputadores = item.qtdComputadores;
+                sala.SistemaOperacional = item.SistemaOperacional;
+                sala.Software1 = item.Software1;
+                sala.Software2 = item.Software2;
+                sala.Software3 = item.Software3;
+            }
+
+            return sala;
+        }
+
+        public int editar(Sala sala)
+        {
+            bdLaboratorioEntities context = new bdLaboratorioEntities();
+            context.Entry(sala).State = EntityState.Modified;
+            return context.SaveChanges();
+        }
+
+        public int excluir(int id)
+        {
+            bdLaboratorioEntities context = new bdLaboratorioEntities();
+            Sala s = new Sala();
+            s.Id = id;
+            context.Entry(s).State = EntityState.Deleted;
+            return context.SaveChanges();
         }
 
     }

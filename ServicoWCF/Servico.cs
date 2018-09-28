@@ -21,5 +21,20 @@ namespace ServicoWCF
         {
             return new Dados.Dados().Listar();
         }
+
+        public Sala getById(int id)
+        {
+            return new Dados.Dados().getById(id);
+        }
+
+        public int editar(Sala sala)
+        {
+            return new Dados.Dados().editar(sala);
+        }
+
+        public int excluir(int id)
+        {
+            return new Dados.Dados().excluir(id);
+        }
     }
 }
