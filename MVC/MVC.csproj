@@ -234,6 +234,7 @@
     <Content Include="Views\Sala\Details.cshtml" />
     <Content Include="Views\Sala\Edit.cshtml" />
     <Content Include="Views\Sala\Delete.cshtml" />
+    <Content Include="Views\Sala\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

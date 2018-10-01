@@ -110,5 +110,12 @@ namespace MVC.Controllers
                 return View();
             }
         }
+
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Contatos.";
+
+            return View();
+        }
     }
 }
